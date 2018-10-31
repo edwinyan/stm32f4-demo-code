@@ -3,10 +3,6 @@
 #include "bsp_os.h"
 #include "led_drv.h"
 #include "tc_common.h"
-#include "rfm_drv.h"
-#include "rfm_common.h"
-#include "rx.h"
-#include "tx.h"
 #include "uart_drv.h"
 
 OS_MUTEX	TX_MUTEX;		//uart tx mutex
@@ -40,14 +36,10 @@ STATIC void app_rfm_tx_task(void *p_arg)
 	(void)p_arg;
 	
 	MSG("Creating Application Tasks: %d\r\n",__FPU_USED);
-	
-	TXsetup();
 
 	while (DEF_TRUE) 
     {   
-    	if(module_index == MODULE_TYPE_433M){
-			TXloop();
-    	}
+
     }
 }
 

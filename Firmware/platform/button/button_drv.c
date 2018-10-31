@@ -1,7 +1,6 @@
 #include "common.h"
 #include "stm32f4xx_gpio.h"
 #include "button_drv.h"
-#include "binding.h"
 
 /*----------------------------------------------------------------------------*/
 

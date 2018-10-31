@@ -1,15 +1,12 @@
 #ifndef _LED_DRV_H_
 #define _LED_DRV_H_
-#include "binding.h" 
+//#include "binding.h" 
 
 typedef enum{
     LED_SRC_START = 0,
     LED_SRC_R = LED_SRC_START,
     LED_SRC_G,
     LED_SRC_B,
-#if (TX == 1)
-	LED_SRC_W,
-#endif
 
     LED_SRC_NUM
 }led_src_enum;

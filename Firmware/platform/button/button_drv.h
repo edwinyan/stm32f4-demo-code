@@ -1,6 +1,5 @@
 #ifndef _BUTTON_DRV_H_
 #define _BUTTON_DRV_H_
-#include "binding.h"
 
 #if(TX == 1)
 typedef enum{
