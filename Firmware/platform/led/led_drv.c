@@ -1,7 +1,6 @@
 #include "common.h"
 #include "stm32f4xx_gpio.h"
 #include "led_drv.h"
-#include "binding.h"
 
 /*----------------------------------------------------------------------------*/
 

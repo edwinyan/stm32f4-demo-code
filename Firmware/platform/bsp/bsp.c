@@ -17,8 +17,8 @@
 #include "led_drv.h"
 #include "uart_drv.h"
 #include "button_drv.h"
-#include "rfm_drv.h"
-#include "binding.h"
+//#include "rfm_drv.h"
+//#include "binding.h"
 #include "buzzer_drv.h"
 #include "adc_drv.h"
 #include "pwm_drv.h"
@@ -123,18 +123,14 @@ void  BSP_Init (void)
 void BSP_Peripheral_Init(void)
 {
     led_drv_init();
-    rfm_preinit();
     uart_drv_init();
 	button_drv_init();
 	buzzer_drv_init();
-	if(TX){
-		Adc_Init();
-	}else{
-		gpio_drv_init(); //config gpio for output
-		TIM3_PWM_Init(4095,7);  //TIM3 for adc2,3,4,5
-		TIM5_PWM_Init(4095,7); //pwm frequency=1M/409 = 2.439KHz
+	Adc_Init();
+	gpio_drv_init(); //config gpio for output
+	TIM3_PWM_Init(4095,7);  //TIM3 for adc2,3,4,5
+	TIM5_PWM_Init(4095,7); //pwm frequency=1M/409 = 2.439KHz
 		
-	}
 }
 
 /*
