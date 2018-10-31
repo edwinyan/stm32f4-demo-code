@@ -124,7 +124,7 @@ void uart_drv_init(void)
 #endif
 }
 
-void uart_drv_dbg_msg(u8 *msg,u32 len)
+void uart_drv_dbg_msg(u8 *msg)
 {
     SERIAL_ERR  err;
     uart_drv_t *uart_drv = &uart_drv_array[UART_SRC_DBG];
@@ -132,7 +132,7 @@ void uart_drv_dbg_msg(u8 *msg,u32 len)
     
     Serial_Wr((SERIAL_IF_NBR   )uart_drv->uart_if_nbr,
               (void           *)&msg[0],
-              (CPU_SIZE_T      )len,
+              (CPU_SIZE_T      )Str_Len((const CPU_CHAR *)msg),
               (CPU_INT32U      )0,
               (SERIAL_ERR     *)&err);
     ASSERT_R(err == SERIAL_ERR_NONE);

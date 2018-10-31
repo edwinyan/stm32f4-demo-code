@@ -38,7 +38,6 @@ void led_drv_init(void)
 {
     GPIO_InitTypeDef  gpio_init;
     led_src_enum src;
-	u8 num;
     
     gpio_init.GPIO_Mode  = GPIO_Mode_OUT;
     gpio_init.GPIO_OType = GPIO_OType_PP;
@@ -51,13 +50,6 @@ void led_drv_init(void)
         GPIO_Init(led_config_array[src].port, &gpio_init);
     }
 
-#if(TX == 1)
-	for(num = 0; num < 3; num++)
-	{
-    	gpio_init.GPIO_Pin = led_out_array[num].pin;
-    	GPIO_Init(led_out_array[num].port, &gpio_init);
-	}
-#endif
     LED_R_OFF;
     LED_G_OFF;
     LED_B_OFF;

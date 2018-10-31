@@ -28,12 +28,6 @@ STATIC gpio_config_t gpio_config_array[GPIO_SRC_NUM] = {
 
 };
 
-STATIC gpio_config_t gpio_led_array[3] = {
-	{GPIOB, GPIO_Pin_9},    //return led
-    {GPIOC, GPIO_Pin_9},	//power ctrl led1
-    {GPIOC, GPIO_Pin_8},	//powet ctrl led2
-};
-
 /*----------------------------------------------------------------------------*/
 //global functions
 void gpio_drv_init(void)

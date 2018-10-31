@@ -10,7 +10,7 @@ OS_MUTEX	RX_MUTEX;		//uart rx mutex
 
 OS_MUTEX	FIFO_MUTEX;
 
-static FIFO_T stFiFo;
+//static FIFO_T stFiFo;
 
 /*----------------------------------------------------------------------------*/
 //macro and variables
@@ -31,7 +31,7 @@ static  CPU_STK  app_tx_task_stk[APP_TX_TASK_STK_SIZE];
 //local function
 STATIC void app_rfm_tx_task(void *p_arg)
 {
-//	OS_ERR      err;
+	OS_ERR      err;
 
 	(void)p_arg;
 	
@@ -39,7 +39,7 @@ STATIC void app_rfm_tx_task(void *p_arg)
 
 	while (DEF_TRUE) 
     {   
-
+		OSTimeDlyHMSM(0, 0, 1, 0, OS_OPT_TIME_HMSM_STRICT, &err);
     }
 }
 
@@ -106,7 +106,11 @@ STATIC void app_task_start(void *p_arg)
     while (DEF_TRUE) 
     {   
         //tc_run_all();
-		OSTimeDlyHMSM(0, 0, 0, 50, OS_OPT_TIME_HMSM_STRICT, &err);
+        //MSG("----------------loop-----------------\r\n");
+        LED_G_ON;
+		OSTimeDlyHMSM(0, 0, 0, 200, OS_OPT_TIME_HMSM_STRICT, &err);
+		LED_G_OFF;
+		OSTimeDlyHMSM(0, 0, 0, 200, OS_OPT_TIME_HMSM_STRICT, &err);
     }
 }
 
