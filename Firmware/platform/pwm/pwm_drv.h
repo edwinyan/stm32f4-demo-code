@@ -1,6 +1,11 @@
 #ifndef _PWM_DRV_H_
 #define _PWM_DRV_H_
 
+//T4CH2 for pwm input capture
+#define TIM4_CH2_GPIO	GPIOB
+#define TIM4_CH2_PIN	GPIO_Pin_7
+#define TIM4_CH2_PINSOURCE	GPIO_PinSource7
+
 #define TIM3_CH1_GPIO	GPIOA
 #define TIM3_CH1_PIN	GPIO_Pin_6
 #define TIM3_CH1_PINSOURCE	GPIO_PinSource6
