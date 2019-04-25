@@ -106,11 +106,11 @@ STATIC void app_task_start(void *p_arg)
     while (DEF_TRUE) 
     {   
         //tc_run_all();
-        //MSG("----------------loop-----------------\r\n");
-        LED_G_ON;
-		OSTimeDlyHMSM(0, 0, 0, 200, OS_OPT_TIME_HMSM_STRICT, &err);
-		LED_G_OFF;
-		OSTimeDlyHMSM(0, 0, 0, 200, OS_OPT_TIME_HMSM_STRICT, &err);
+        MSG("----------------loop-----------------\r\n");
+       // LED_G_ON;
+		OSTimeDlyHMSM(0, 0, 0, 500, OS_OPT_TIME_HMSM_STRICT, &err);
+		//LED_G_OFF;
+		OSTimeDlyHMSM(0, 0, 0, 500, OS_OPT_TIME_HMSM_STRICT, &err);
     }
 }
 
